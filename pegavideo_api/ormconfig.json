@@ -1,0 +1,14 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "admin123",
+    "database": "pegavideo",
+    "entities": ["dist/**/entities.js"],
+    "migrationsTableName": "migration",
+    "migrations": ["dist/migrations/*.js"],
+    "cli": {
+      "migrationsDir": "src/migration"
+    }
+  }
