@@ -1,19 +1,19 @@
 import Head from 'next/head'
-import Header from '~/organisms/Header'
-import HeroDownload from '~/sections/HeroDownload'
-import VideosList from '~/sections/VideosList'
-export default function Home() {
+import type { NextPage } from 'next'
+
+const Home: NextPage= () => {
+  
   return (
       <>
       <Head>
-      <title>Pega Video - Salve seus vídeos favoritos para assistir offline </title>
+      <title>Pega Video - Salve seus vídeos favoritos para assistir offline</title>
         <meta
           name="description"
           content="Salve vídeos do Instagram e Youtube direto para seu celular."
         />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
-        <link rel="canonical" href="https://pegavideo.com" />
+        <link rel="canonical" href="https://pegavideo.com/pt/" />
         <link rel="alternate" hrefLang="x-default" href="https://pegavideo.com"/>
         <link rel="alternate" hrefLang="es" href="https://pegavideo.com/es/"/>
         <link rel="alternate" hrefLang="en" href="https://pegavideo.com/en/"/>
@@ -23,7 +23,7 @@ export default function Home() {
         <link rel="alternate" hrefLang="id" href="https://pegavideo.com/id/"/>
         {/* <!--Facebook & Instagram cards:--> */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Pega Video - Salve seus vídeos favoritos para assistir offline " />
+        <meta property="og:title" content="Pega Video - Salve seus vídeos favoritos para assistir offline" />
         <meta property="og:image" content="https://pegavideo.com/img/capa-de-compartilhamento-home.jpg" />
         <meta property="og:site_name" content="pegavideo.com/" />
         <meta property="og:url" content=" https://pegavideo.com" />
@@ -34,7 +34,7 @@ export default function Home() {
         {/* <!--:Facebook & Instagram cards--> */}
         {/* <!--Twitter cards:--> */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Pega Video - Salve seus vídeos favoritos para assistir offline " />
+        <meta name="twitter:title" content="Pega Video - Salve seus vídeos favoritos para assistir offline" />
         <meta
           name="twitter:description"
           content="Salve vídeos do Instagram e Youtube direto para seu celular."
@@ -46,9 +46,8 @@ export default function Home() {
         {/* <!--:Twitter cards--> */}
         <link rel="shortcut icon" type="image/x-icon" href="/img/pegavideo_favicon.png" />
       </Head>
-      <Header/>
-      <HeroDownload/>
-      <VideosList/>
       </>
   )
 }
+
+export default Home
