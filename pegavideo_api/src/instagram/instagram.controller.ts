@@ -7,6 +7,7 @@ import { Request } from 'express';
 export class InstagramController {
   constructor(private readonly instagramService: InstagramService) {}
 
+  @Get('/video')
   async downloadVideos(@Query('url') url: string, @Req() req: Request) {
     if (!isURL(url, { protocols: ['http','https'], require_protocol: true })) {
       throw new BadRequestException('Invalid URL');

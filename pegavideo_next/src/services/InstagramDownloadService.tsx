@@ -13,9 +13,9 @@ const apiLocal = axios.create({
 
 let resposta: any = {}
 
-export default class GetBolsasService {
+export default class InstagramDownloadService {
   async getVideoInstagram (url: string): Promise<Object> {
-    await api.get(`/`)
+    await api.get(`api/download/Instagram/video?url=${url}`)
       .then((response: any) => {
         resposta = response.data
       }).catch((err) => {
@@ -23,5 +23,16 @@ export default class GetBolsasService {
       })
     return resposta
   }
+
+  async getPicsInstagram (url: string): Promise<Object> {
+    await api.get(`api/download/Instagram/pics?url=${url}`)
+      .then((response: any) => {
+        resposta = response.data
+      }).catch((err) => {
+        resposta = err
+      })
+    return resposta
+  }
+   
 
 }

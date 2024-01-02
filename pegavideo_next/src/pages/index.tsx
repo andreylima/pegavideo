@@ -2,7 +2,18 @@ import Head from 'next/head'
 import Header from '~/organisms/Header'
 import HeroDownload from '~/sections/HeroDownload'
 import VideosList from '~/sections/VideosList'
+import React, { useState, createContext } from 'react'
+export type VideosListType = {
+  videoList: Array<string>
+  SetVideoList:(c: any) => void
+}
+export const videoListContext = createContext<VideosListType>({
+  videoList: [],
+  SetVideoList: () => useState([])
+})
+
 export default function Home() {
+  const [videoList, SetVideoList] = useState([])
   return (
       <>
       <Head>
@@ -47,8 +58,10 @@ export default function Home() {
         <link rel="shortcut icon" type="image/x-icon" href="/img/pegavideo_favicon.png" />
       </Head>
       <Header/>
-      <HeroDownload/>
-      <VideosList/>
+      <videoListContext.Provider value={{ videoList, SetVideoList }}>
+        <HeroDownload/>
+        <VideosList videos={videoList}/>
+      </videoListContext.Provider>
       </>
   )
 }
